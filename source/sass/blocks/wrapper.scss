@@ -1,0 +1,17 @@
+.wrapper {
+  // width: 874px;
+  // margin: 0 auto;
+
+  &--header {
+    height: 100%;
+    display: grid;
+    grid-template-rows: min-content 526px;
+    grid-template-columns: 1fr 1fr;
+
+    @media screen and (max-width: $desktop-width - 1) {
+      display: block;
+      width: auto;
+      margin: 0;
+    }
+  }
+}
