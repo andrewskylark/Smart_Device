@@ -1,0 +1,32 @@
+.site-list {
+  @include reset-list;
+  height: 127px;
+  width: fit-content;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+
+  @media screen and (max-width: $desktop-width - 1) {
+    height: fit-content;
+  }
+
+  @media screen and (max-width: $tablet-width - 1) {
+    margin-left: 4.6%;
+  }
+
+  &:first-of-type {
+    margin-right: 64px;
+
+    @media screen and (max-width: 1600px) {
+      margin-right: auto;
+    }
+
+    @media screen and (max-width: $desktop-width - 1) {
+      margin-right: 0;
+    }
+  }
+}
+
+.site-list__link {
+  color: rgba($text-accent, 0.5);
+}

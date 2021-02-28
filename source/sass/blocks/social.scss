@@ -1,0 +1,19 @@
+.social {
+  @include reset-list;
+  width: fit-content;
+  display: flex;
+  flex-direction: row;
+}
+
+.social__item {
+  width: min-content;
+}
+
+.social__item:not(:last-of-type) {
+  margin-right: 15px;
+}
+
+.social__icon:hover,
+.social__icon:active {
+  fill: $main;
+}
