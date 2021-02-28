@@ -14,7 +14,7 @@
   letter-spacing: 0.05em;
   text-transform: uppercase;
   color: $text-light;
-  border: 2px solid $text-light;
+  border: 1px solid $text-light;
   border-radius: 5px;
   cursor: pointer;
 
@@ -56,11 +56,8 @@
     }
   }
 
-  &--about-us {
-    min-height: 55px;
+  &--about {
     width: 180px;
-    font-size: 16px;
-    line-height: 19px;
     border-color: $main;
     color: $main;
 
@@ -73,14 +70,6 @@
 
     &:active {
       opacity: 0.3;
-    }
-
-    @media screen and (max-width: $desktop-width - 1) {
-      width: 379px;
-    }
-
-    @media screen and (max-width: $tablet-width - 1) {
-      width: 100%;
     }
   }
 }

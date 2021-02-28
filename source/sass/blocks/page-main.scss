@@ -16,6 +16,98 @@
   }
 }
 
-// .page-main__features {
+.page-main__features {
+  padding-bottom: 76px;
 
-// }
+  @media screen and (max-width: $desktop-width - 1) {
+    padding-bottom: 27px;
+  }
+
+  @media screen and (max-width: $tablet-width - 1) {
+    padding-bottom: 36px;
+  }
+}
+
+.page-main__about {
+  padding-left: 182px;
+  padding-right: 2px;
+  padding-bottom: 17px;
+  background-image: url("../img/bg-2005.png");
+  background-repeat: no-repeat;
+  background-position: -22px center;
+  background-size: 18%;
+
+  @media (min-resolution: 2dppx) {
+    background-image: url("../img/bg-2005@2x.png");
+  }
+
+  @media screen and (max-width: $desktop-width - 1) {
+    padding: 0 2px 17px 189px;
+    background-position: -24px -4px;
+    background-size: 34%;
+  }
+
+  @media screen and (max-width: $tablet-width - 1) {
+    padding-left: 0;
+    background: none;
+  }
+
+  h2 {
+    @include reset-text;
+    margin-bottom: 18px;
+    font-family: "Roboto Condensed", "Tahoma", sans-serif;
+    font-weight: normal;
+    font-size: 36px;
+    line-height: 51px;
+
+    @media screen and (max-width: $desktop-width - 1) {
+      font-size: 32px;
+      line-height: 45px;
+      margin-bottom: 24px;
+    }
+
+    @media screen and (max-width: $tablet-width - 1) {
+      font-size: 28px;
+      margin-bottom: 19px;
+    }
+  }
+
+  p {
+    @include reset-text;
+    margin-bottom: 22px;
+    font-size: 16px;
+    line-height: 22px;
+
+    @media screen and (max-width: $desktop-width - 1) {
+      // height: 201px;
+      margin-bottom: 20px;
+      // overflow-y: hidden;
+      // transition: height 0.3s ease-out;
+    }
+
+    @media screen and (max-width: $tablet-width - 1) {
+      margin-bottom: 39px;
+    }
+
+    // @media screen and (max-width: 400px) {
+    //   height: 343px;
+    // }
+    &:last-of-type {
+      margin-bottom: 38px;
+
+      @media screen and (max-width: $tablet-width - 1) {
+        margin-bottom: 28px;
+      }
+    }
+  }
+
+  // span {
+  //   display: block;
+  //   height: 17px;
+
+  //   @media screen and (max-width: $tablet-width - 1) {
+  //     display: block;
+  //     height: 17px;
+  //   }
+  // }
+}
