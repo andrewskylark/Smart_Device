@@ -1,18 +1,18 @@
 .page-main {
   min-width: 320px;
-  padding: 109px 19.5% 113px;
+  padding: 109px 0 113px;
 
-  @media screen and (max-width: 1300px) {
-    padding-left: 6%;
-    padding-right: 6%;
-  }
+  // @media screen and (max-width: 1300px) {
+  //   padding-left: 6%;
+  //   padding-right: 6%;
+  // }
 
   @media screen and (max-width: $desktop-width - 1) {
-    padding: 54px 3% 0;
+    padding-top: 54px;
   }
 
   @media screen and (max-width: $tablet-width - 1) {
-    padding: 37px 4.5% 0;
+    padding-top: 37px;
   }
 }
 
@@ -32,9 +32,10 @@
   padding-left: 182px;
   padding-right: 2px;
   padding-bottom: 17px;
+  margin-bottom: 94px;
   background-image: url("../img/bg-2005.png");
   background-repeat: no-repeat;
-  background-position: -22px center;
+  background-position: -22px 4px;
   background-size: 18%;
 
   @media (min-resolution: 2dppx) {
@@ -42,13 +43,15 @@
   }
 
   @media screen and (max-width: $desktop-width - 1) {
-    padding: 0 2px 17px 189px;
+    padding: 0 2px 17px 187px;
+    margin-bottom: 69px;
     background-position: -24px -4px;
     background-size: 34%;
   }
 
   @media screen and (max-width: $tablet-width - 1) {
     padding-left: 0;
+    margin-bottom: 49px;
     background: none;
   }
 
@@ -68,7 +71,7 @@
 
     @media screen and (max-width: $tablet-width - 1) {
       font-size: 28px;
-      margin-bottom: 19px;
+      margin-bottom: 17px;
     }
   }
 
@@ -100,14 +103,19 @@
       }
     }
   }
+}
 
-  // span {
-  //   display: block;
-  //   height: 17px;
+.page-main__goods {
+  min-height: 936px;
+  padding: 88px 0;
+  background: $bg;
 
-  //   @media screen and (max-width: $tablet-width - 1) {
-  //     display: block;
-  //     height: 17px;
-  //   }
-  // }
+  @media screen and (max-width: $desktop-width - 1) {
+    height: auto;
+    padding: 50px 0 32px;
+  }
+
+  @media screen and (max-width: $tablet-width - 1) {
+    padding-bottom: 34px;
+  }
 }

@@ -1,0 +1,219 @@
+.goods {
+  h2 {
+    @include reset-text;
+    margin-bottom: 52px;
+    font-family: "Roboto Condensed", "Tahoma", sans-serif;
+    font-weight: normal;
+    font-size: 36px;
+    line-height: 51px;
+    color: $text-light;
+
+    @media screen and (max-width: $desktop-width - 1) {
+      margin-bottom: 49px;
+      font-size: 32px;
+      line-height: 45px;
+      padding-right: 91px;
+    }
+
+    @media screen and (max-width: $tablet-width - 1) {
+      margin-bottom: 42px;
+      margin-left: 10px;
+      padding-right: 0;
+      font-size: 28px;
+      line-height: 140.62%;
+    }
+  }
+}
+
+.goods__list {
+  @include reset-list;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  @media screen and (max-width: $desktop-width - 1) {
+    flex-direction: column;
+  }
+
+  // @media screen and (max-width: $tablet-width - 1) {
+  //   flex-direction: column;
+  // }
+
+  li {
+    position: relative;
+    min-height: 620px;
+    width: 31.7%;
+    color: $text-light;
+
+    @media screen and (max-width: $desktop-width - 1) {
+      min-width: 100%;
+      min-height: 256px;
+      margin-bottom: 46px;
+      // margin: 46px 0;
+    }
+
+    @media screen and (max-width: $tablet-width - 1) {
+      // margin: 30px 0;
+      margin-bottom: 30px;
+    }
+  }
+}
+
+.goods__link {
+  position: relative;
+  display: block;
+  width: 100%;
+  min-height: 620px;
+  max-height: 100%;
+  padding: 49px 43px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: $text-light;
+
+  @media screen and (max-width: $desktop-width - 1) {
+    padding: 40px 45px;
+    min-height: 256px;
+  }
+
+  @media screen and (max-width: $tablet-width - 1) {
+    padding: 20px 35px;
+  }
+
+  h3 {
+    @include reset-text;
+    width: 195px;
+    font-family: "Roboto Condensed", "Tahoma", sans-serif;
+    font-size: 20px;
+    line-height: 30px;
+    font-weight: 400;
+
+    @media screen and (max-width: $tablet-width - 1) {
+      width: 192px;
+    }
+  }
+
+  &--production {
+    background-image: url("../img/bg-production.png");
+
+    @media (min-resolution: 2dppx) {
+      background-image: url("../img/bg-production@2x.png");
+    }
+
+    @media screen and (max-width: $desktop-width - 1) {
+      background-image: url("../img/bg-production-small.png");
+
+      @media (min-resolution: 2dppx) {
+        background-image: url("../img/bg-production-small@2x.png");
+      }
+    }
+
+    @media screen and (max-width: $tablet-width - 300) {
+      background-image: url("../img/bg-production-mob.png");
+
+      @media (min-resolution: 2dppx) {
+        background-image: url("../img/bg-production-mob@2x.png");
+      }
+    }
+  }
+
+  &--install {
+    background-image: url("../img/bg-install.png");
+
+    @media (min-resolution: 2dppx) {
+      background-image: url("../img/bg-install@2x.png");
+    }
+
+    @media screen and (max-width: $desktop-width - 1) {
+      background-image: url("../img/bg-install-small.png");
+
+      @media (min-resolution: 2dppx) {
+        background-image: url("../img/bg-install-small@2x.png");
+      }
+    }
+
+    @media screen and (max-width: $tablet-width - 300) {
+      background-image: url("../img/bg-install-mob.png");
+
+      @media (min-resolution: 2dppx) {
+        background-image: url("../img/bg-install-mob@2x.png");
+      }
+    }
+  }
+
+  &--light {
+    background-image: url("../img/bg-light.png");
+
+    @media (min-resolution: 2dppx) {
+      background-image: url("../img/bg-light@2x.png");
+    }
+
+    @media screen and (max-width: $desktop-width - 1) {
+      background-image: url("../img/bg-light-small.png");
+
+      @media (min-resolution: 2dppx) {
+        background-image: url("../img/bg-light-small@2x.png");
+      }
+    }
+
+    @media screen and (max-width: $tablet-width - 300) {
+      background-image: url("../img/bg-light-mob.png");
+
+      @media (min-resolution: 2dppx) {
+        background-image: url("../img/bg-light-mob@2x.png");
+      }
+    }
+
+    h3 {
+      width: 177px;
+
+      @media screen and (max-width: $desktop-width - 1) {
+        width: 172px;
+        margin-top: 10px;
+      }
+
+      @media screen and (max-width: $tablet-width - 1) {
+        margin-top: 10px;
+      }
+    }
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 63px;
+    height: 63px;
+    background-color: $main;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    right: 29px;
+    bottom: 28px;
+    width: 6px;
+    height: 6px;
+    border: 1px solid white;
+    transform: rotate(45deg);
+    border-left: none;
+    border-bottom: none;
+  }
+
+  &:hover,
+  &:active {
+    box-shadow: 0 1px 7px 2px rgba($main, 0.3);
+
+    &:before {
+      background-color: $main-hover;
+    }
+
+    h3 {
+      color: $text-main;
+    }
+  }
+
+  &:active {
+    opacity: 0.6;
+  }
+}

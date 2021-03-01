@@ -32,7 +32,7 @@
     }
 
     &:active {
-      background-color: rgba($text-accent, 0.6)
+      background-color: rgba($text-accent, 0.6);
     }
 
     &::before,
@@ -52,13 +52,13 @@
 
     &--active {
       &::after {
-      display: none;
+        display: none;
       }
 
       &:hover,
       &:focus {
-      // transform: rotate(90deg);
-      border: 1px solid rgba($text-accent, 0.9);
+        // transform: rotate(90deg);
+        border: 1px solid rgba($text-accent, 0.9);
 
         &::before {
           content: "";
@@ -71,7 +71,7 @@
       }
 
       &:active {
-        background-color: rgba($text-accent, 0.6)
+        background-color: rgba($text-accent, 0.6);
       }
     }
   }
