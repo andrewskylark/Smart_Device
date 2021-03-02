@@ -74,7 +74,7 @@
       padding: 14px 20px;
     }
 
-    @media screen and (max-width: $desktop-width - 1) {
+    @media screen and (max-width: $tablet-width - 1) {
       width: 100%;
       margin-bottom: 32px;
       padding: 12px 18px;
@@ -115,7 +115,7 @@
     width: 281px;
   }
 
-  @media screen and (max-width: $desktop-width - 1) {
+  @media screen and (max-width: $tablet-width - 1) {
     width: 100%;
     min-height: 47px;
     margin-bottom: 22px;

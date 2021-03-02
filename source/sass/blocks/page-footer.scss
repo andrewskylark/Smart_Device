@@ -19,7 +19,7 @@
     font-size: 15px;
   }
 
-  @media screen and (max-width: $desktop-width - 1) {
+  @media screen and (max-width: $tablet-width - 1) {
     min-height: 685px;
   }
 }
@@ -31,7 +31,7 @@
     margin-bottom: 0;
   }
 
-  @media screen and (max-width: $desktop-width - 1) {
+  @media screen and (max-width: $tablet-width - 1) {
     margin-bottom: 17px;
   }
 }

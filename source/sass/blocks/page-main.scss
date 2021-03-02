@@ -13,12 +13,14 @@
     padding-top: 54px;
     background-image: url("../img/bg-|>.svg");
     background-repeat: no-repeat;
-    background-size: 38%;
-    background-position: 80% 15.5%;
+    background-size: 95%;
+    background-position: 629% 4.5%;
   }
 
   @media screen and (max-width: $tablet-width - 1) {
     padding-top: 37px;
+    background-size: 223%;
+    background-position: -77px 23.5%;
   }
 }
 
