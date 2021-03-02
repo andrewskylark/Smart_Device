@@ -138,6 +138,19 @@
         background-image: url("../img/bg-install-mob@2x.png");
       }
     }
+
+    h3 {
+      width: 177px;
+
+      // @media screen and (max-width: $desktop-width - 1) {
+      //   width: 172px;
+      //   margin-top: 10px;
+      // }
+
+      // @media screen and (max-width: $tablet-width - 1) {
+      //   margin-top: 10px;
+      // }
+    }
   }
 
   &--light {
@@ -164,7 +177,7 @@
     }
 
     h3 {
-      width: 177px;
+      width: 169px;
 
       @media screen and (max-width: $desktop-width - 1) {
         width: 172px;

@@ -27,10 +27,6 @@
     margin-right: 34px;
   }
 
-  @media screen and (max-width: $desktop-width - 1) {
-    margin-right: 25px;
-  }
-
   &:first-of-type {
     @media screen and (min-width: 1600px) {
       margin-right: 40px;

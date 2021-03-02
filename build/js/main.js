@@ -48,6 +48,7 @@ const DESKTOP_WIDTH = 1024;
       } else if (currentText.length >= TEXT_LIMIT) {
         trimText(currentText);
       }
+    }
     // let panel = btn.previousElementSibling;
 
     // if (panel.style.height) {
@@ -55,18 +56,20 @@ const DESKTOP_WIDTH = 1024;
     // } else {
     //   panel.style.height = `${panel.scrollHeight}px`;
     // }
-    }
   };
 
   btn.addEventListener(`click`, adjustText);
+
   //  на планшете и мобиле меню текст по умолчанию обрезан
   if (document.body.clientWidth < DESKTOP_WIDTH) {
-    trimText(initialText);
+    adjustText();
   }
 
   window.addEventListener(`resize`, () => {
     if (document.body.clientWidth < DESKTOP_WIDTH) {
       trimText(initialText);
+    } else {
+      p.textContent = initialText;
     }
   });
 })();

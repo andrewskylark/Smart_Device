@@ -5,7 +5,7 @@
     display: block;
     position: absolute;
     top: 22px;
-    right: 5%;
+    right: 3%;
     width: 28px;
     height: 28px;
     border: none;
@@ -84,5 +84,13 @@
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.3s ease-out;
+  }
+
+  &--nav {
+    display: flex;
+
+    @media screen and (max-width: $desktop-width - 1) {
+      flex-direction: column;
+    }
   }
 }

@@ -141,149 +141,180 @@
 
       <section class="page-main__goods goods" id="goods">
         <div class="wrapper">
-        <h2>Service Device предлагает следующие товары и услуги</h2>
-        <ul class="goods__list">
-          <li><a class="goods__link goods__link--production" href="#!">
-              <h3>Производство печатных плат
-              </h3>
-            </a>
-          </li>
-          <li><a class="goods__link goods__link--install" href="#!">
-              <h3>Монтаж печатных плат
-              </h3>
-            </a>
-          </li>
-          <li><a class="goods__link goods__link--light" href="#!">
-              <h3>Комплектующие для светотехники
-              </h3>
-            </a>
-          </li>
-        </ul></div>
-        
+          <h2>Service Device предлагает следующие товары и услуги</h2>
+          <ul class="goods__list">
+            <li><a class="goods__link goods__link--production" href="#!">
+                <h3>Производство печатных плат
+                </h3>
+              </a>
+            </li>
+            <li><a class="goods__link goods__link--install" href="#!">
+                <h3>Монтаж печатных плат
+                </h3>
+              </a>
+            </li>
+            <li><a class="goods__link goods__link--light" href="#!">
+                <h3>Комплектующие для светотехники
+                </h3>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="page-main__form">
+        <div class="wrapper wrapper--form">
+          <form method="post" class="form">
+            <h2>Остались вопросы? Задайте их нам!</h2>
+            <p>
+              Мы проконсультируем Вас бесплатно
+            </p>
+
+            <div class="form__inputs">
+              <!-- пустые лэйблы добавлены для >90% seo lighthouse -->
+              <label for="name" class="visually-hidden">Имя</label>
+              <input type="text" name="name" id="name" placeholder="Имя" required="">
+
+              <label for="tel" class="visually-hidden">Телефон</label>
+              <input type="tel" name="tel" id="tel" placeholder="Телефон" required="" pattern="^\+?\d{0,11}">
+
+              <textarea name="ask" id="ask" placeholder="Ваш вопрос"></textarea>
+
+              <button class="form__btn btn btn--form" type="submit">Задать вопрос</button>
+
+              <div class="form__checkbox">
+                <input type="checkbox" name="i_agree" id="i_agree" checked="">
+                <label for="i_agree">Я согласен на обработку персональных данных</label>
+              </div>
+            </div>
+          </form>
+
+        </div>
       </section>
 
     </main>
 
     <footer class="page-footer">
+      <div class="wrapper wrapper--footer">
+        <section class="page-footer__social">
 
-      <section class="page-footer__social">
-        <h2 class="visually-hidden">Логотип сайта и социальные сети</h2>
+          <h2 class="visually-hidden">Логотип сайта и социальные сети</h2>
 
-        <a class="page-footer__logo" aria-label="логотип сайта Smart device: умные технологии и ссылка на главную">
-          <img src="img/logo-footer.svg" width="216" height="52" alt="логотип Smart device" loading="eager">
-        </a>
-        <p>
-          <span class="page-footer__SD page-footer__SD--social">
-            1999-2018 SD Service Devices
-          </span>
-        </p>
-
-        <ul class="social">
-          <li class="social__item">
-            <a class="social__link social__link--fb" aria-label="Smart device в фэйсбуке" href="#!">
-              <svg class="social__icon" width="27" height="27">
-                <use xlink:href="img/sprite_auto.svg#icon-fb"></use>
-              </svg>
-            </a>
-          </li>
-          <li class="social__item">
-            <a class="social__link social__link--ok" aria-label="Smart device в одноклассниках" href="#!">
-              <svg class="social__icon" width="27" height="27">
-                <use xlink:href="img/sprite_auto.svg#icon-ok"></use>
-              </svg>
-            </a>
-          </li>
-          <li class="social__item">
-            <a class="social__link social__link--vk" aria-label="Smart device вКонтакте" href="#!">
-              <svg class="social__icon" width="27" height="27">
-                <use xlink:href="img/sprite_auto.svg#icon-vk"></use>
-              </svg>
-            </a>
-          </li>
-        </ul>
-
-      </section>
-
-      <nav class="page-footer__nav">
-
-        <h2>
-          Разделы сайта
-        </h2>
-
-        <button class="accordion" type="button" aria-label="открыть или свернуть разделы сайта">
-        </button>
-        <div class="accordion__content">
-          <ul class="site-list">
-            <li class="site-list__item">
-              <a class="site-list__link" href="#!">
-                О компании
-              </a>
-            </li>
-            <li class="site-list__item">
-              <a class="site-list__link" href="#!">
-                Продукты
-              </a>
-            </li>
-            <li class="site-list__item">
-              <a class="site-list__link" href="#!">
-                Производство печатных плат
-              </a>
-            </li>
-            <li class="site-list__item">
-              <a class="site-list__link" href="#!">
-                Монтаж печатных плат
-              </a>
-            </li>
-          </ul>
-
-          <ul class="site-list site-list--col2">
-            <li class="site-list__item">
-              <a class="site-list__link" href="#!">
-                Комплектующие
-              </a>
-            </li>
-            <li class="site-list__item">
-              <a class="site-list__link" href="#!">
-                Доставка
-              </a>
-            </li>
-            <li class="site-list__item">
-              <a class="site-list__link" href="#!">
-                Контакты
-              </a>
-            </li>
-          </ul>
-        </div>
-      </nav>
-
-
-      <section class="page-footer__office">
-
-        <h2>
-          Наш офис
-        </h2>
-
-        <button class="accordion" type="button" aria-label="открыть или свернуть адрес и телефоны оффиса">
-        </button>
-
-        <div class="accordion__content">
+          <a class="page-footer__logo" aria-label="логотип сайта Smart device: умные технологии и ссылка на главную">
+            <img src="img/logo-footer.svg" width="216" height="52" alt="логотип Smart device" loading="eager">
+          </a>
           <p>
-            г. Мытищи, Олимпийский проспект, д.10
+            <span class="page-footer__SD page-footer__SD--social">
+              1999-2018 SD Service Devices
+            </span>
           </p>
-          <ul>
-            <li><a href="tel:+74955894050">
-                +7 (495) 589-40-50
-              </a></li>
-            <li><a href="tel:+79250038767">
-                +7 (925) 003-87-67
-              </a></li>
-            <li><a href="tel:+792692608079">
-                +7 (926) 926-080-79
-              </a></li>
-          </ul>
-        </div>
-      </section>
 
+          <ul class="social">
+            <li class="social__item">
+              <a class="social__link social__link--fb" aria-label="Smart device в фэйсбуке" href="#!">
+                <svg class="social__icon" width="27" height="27">
+                  <use xlink:href="img/sprite_auto.svg#icon-fb"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="social__item">
+              <a class="social__link social__link--ok" aria-label="Smart device в одноклассниках" href="#!">
+                <svg class="social__icon" width="27" height="27">
+                  <use xlink:href="img/sprite_auto.svg#icon-ok"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="social__item">
+              <a class="social__link social__link--vk" aria-label="Smart device вКонтакте" href="#!">
+                <svg class="social__icon" width="27" height="27">
+                  <use xlink:href="img/sprite_auto.svg#icon-vk"></use>
+                </svg>
+              </a>
+            </li>
+          </ul>
+
+        </section>
+
+        <nav class="page-footer__nav">
+
+          <h2>
+            Разделы сайта
+          </h2>
+
+          <button class="accordion" type="button" aria-label="открыть или свернуть разделы сайта">
+          </button>
+          <div class="accordion__content accordion__content--nav">
+            <ul class="site-list">
+              <li class="site-list__item">
+                <a class="site-list__link" href="#!">
+                  О компании
+                </a>
+              </li>
+              <li class="site-list__item">
+                <a class="site-list__link" href="#!">
+                  Продукты
+                </a>
+              </li>
+              <li class="site-list__item">
+                <a class="site-list__link" href="#!">
+                  Производство печатных плат
+                </a>
+              </li>
+              <li class="site-list__item">
+                <a class="site-list__link" href="#!">
+                  Монтаж печатных плат
+                </a>
+              </li>
+            </ul>
+
+            <ul class="site-list site-list--col2">
+              <li class="site-list__item">
+                <a class="site-list__link" href="#!">
+                  Комплектующие
+                </a>
+              </li>
+              <li class="site-list__item">
+                <a class="site-list__link" href="#!">
+                  Доставка
+                </a>
+              </li>
+              <li class="site-list__item">
+                <a class="site-list__link" href="#!">
+                  Контакты
+                </a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+
+
+        <section class="page-footer__office">
+
+          <h2>
+            Наш офис
+          </h2>
+
+          <button class="accordion" type="button" aria-label="открыть или свернуть адрес и телефоны оффиса">
+          </button>
+
+          <div class="accordion__content">
+            <p>
+              г. Мытищи, Олимпийский проспект, д.10
+            </p>
+            <ul>
+              <li><a href="tel:+74955894050">
+                  +7 (495) 589-40-50
+                </a></li>
+              <li><a href="tel:+79250038767">
+                  +7 (925) 003-87-67
+                </a></li>
+              <li><a href="tel:+792692608079">
+                  +7 (926) 926-080-79
+                </a></li>
+            </ul>
+          </div>
+        </section>
+      </div>
       <section class="page-footer__copy">
         <h2 class="visually-hidden">copyrights</h2>
         <p>
