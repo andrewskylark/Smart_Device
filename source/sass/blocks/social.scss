@@ -14,6 +14,10 @@
 }
 
 .social__icon:hover,
+.social__icon:focus {
+  --social-svg: #{$main};
+}
+
 .social__icon:active {
-  fill: $main;
+  opacity: 0.5;
 }

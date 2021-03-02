@@ -217,7 +217,7 @@
   &:active {
     box-shadow: 0 1px 7px 2px rgba($main, 0.3);
 
-    &:before {
+    &::before {
       background-color: $main-hover;
     }
 

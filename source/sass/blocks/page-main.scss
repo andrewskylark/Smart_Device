@@ -61,7 +61,6 @@
   @media screen and (max-width: $tablet-width - 1) {
     min-height: 548px;
     padding-left: 0;
-    margin-bottom: 0px;
     background: none;
   }
 
@@ -102,9 +101,6 @@
       margin-bottom: 39px;
     }
 
-    // @media screen and (max-width: 400px) {
-    //   height: 343px;
-    // }
     &:last-of-type {
       margin-bottom: 38px;
 
@@ -135,9 +131,9 @@
   padding: 96px 0;
   background-color: $main;
   background-image: url("../img/bg-plane.png"),
-      url("../img/bg-triangles.svg");
+    url("../img/bg-triangles.svg");
   background-repeat: no-repeat;
-  background-size: 26%,698px 711px;
+  background-size: 26%, 698px 711px;
   background-position: 25% 166px, 13% -94px;
 
   @media (min-resolution: 2dppx) {
@@ -146,16 +142,12 @@
   }
 
   @media screen and (max-width: 1245px) {
-    background-position: 8% 166px,-20% -94px;
+    background-position: 8% 166px, -20% -94px;
   }
 
   @media screen and (max-width: $desktop-width - 1) {
     background-image: none;
   }
-
-  // @media screen and (max-width: $tablet-width - 1) {
-  //   margin-bottom: 6px;
-  // }
 
   @media screen and (max-width: $desktop-width - 1) {
     min-height: 664px;

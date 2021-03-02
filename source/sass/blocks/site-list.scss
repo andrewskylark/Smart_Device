@@ -1,6 +1,5 @@
 .site-list {
   @include reset-list;
-  height: 127px;
   width: fit-content;
   height: fit-content;
   display: flex;
@@ -31,4 +30,13 @@
 
 .site-list__link {
   color: rgba($text-accent, 0.5);
+
+  &:hover,
+  &:focus {
+    color: $main;
+  }
+
+  &:active {
+    opacity: 0.5;
+  }
 }

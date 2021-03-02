@@ -81,10 +81,6 @@
     }
   }
 
-  textarea {
-    margin-bottom: 43px;
-  }
-
   input::placeholder,
   textarea::placeholder {
     color: $text-light;
@@ -94,6 +90,7 @@
     width: 100%;
     min-height: 154px;
     padding: 13px 16px;
+    margin-bottom: 43px;
 
     @media screen and (max-width: $desktop-width - 1) {
       min-height: 162px;
@@ -151,10 +148,11 @@
   }
 
   label {
-    color:rgba($text-light, 0.8);
+    color: rgba($text-light, 0.8);
   }
 
   input + label::before {
+
     content: "";
     position: absolute;
     width: 16px;

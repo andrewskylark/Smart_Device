@@ -20,7 +20,7 @@
   }
 
   @media screen and (max-width: $tablet-width - 1) {
-    min-height: 685px;
+    min-height: fit-content;
   }
 }
 
@@ -201,7 +201,7 @@
 
     @media screen and (max-width: $tablet-width - 1) {
       padding-left: 4.6%;
-      padding-bottom: 15px;
+      padding-bottom: 22px;
     }
   }
 

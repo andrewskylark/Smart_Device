@@ -300,7 +300,6 @@ const TAB_KEY = `Tab`;
 
     submitBtn.addEventListener(`click`, () => {
 
-
       for (let input of inputs) {
         if (input.reportValidity() === false) {
           input.classList.add(`input-invalid`);
