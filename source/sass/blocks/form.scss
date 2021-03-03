@@ -149,6 +149,7 @@
 
   label {
     color: rgba($text-light, 0.8);
+    cursor: pointer;
   }
 
   input + label::before {
@@ -160,6 +161,7 @@
     border: 1px solid $text-light;
     left: 7px;
     top: 8px;
+    cursor: pointer;
 
     @media screen and (max-width: $tablet-width - 1) {
       left: 1px;
@@ -177,6 +179,7 @@
     transform: rotate(-45deg);
     left: 10px;
     top: 12px;
+    cursor: pointer;
 
     @media screen and (max-width: $tablet-width - 1) {
       left: 5px;
