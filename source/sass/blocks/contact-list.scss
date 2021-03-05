@@ -3,18 +3,18 @@
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  justify-content: space-between;
-  min-width: 658px;
+  margin-left: auto;
+  margin-right: 38px;
+  padding-top: 5px;
 
   @media screen and (max-width: $desktop-width - 1) {
-    min-width: fit-content;
     justify-content: flex-end;
     padding-right: 3px;
     padding-bottom: 4px;
+    margin-right: 0;
   }
 
-  span,
-  button {
+  span {
     @media screen and (max-width: $desktop-width - 1) {
       display: none;
     }
@@ -22,6 +22,17 @@
 }
 
 .contact-list__item {
+  margin-right: 88px;
+  margin-bottom: 5px;
+
+  &:last-of-type {
+    margin-right: 0;
+  }
+
+  @media screen and (max-width: 1500px) {
+    margin-right: 15px;
+  }
+
   @media screen and (max-width: $desktop-width - 1) {
     width: min-content;
     margin-right: 34px;
@@ -31,23 +42,11 @@
     margin-right: 25px;
   }
 
-  &:first-of-type {
-    @media screen and (min-width: 1600px) {
-      margin-right: 40px;
-    }
-  }
-  //прячет кнопку на планшете
-  &:last-of-type {
-    @media screen and (max-width: $desktop-width - 1) {
-      display: none;
-    }
-  }
-  //обнуляет марджин предпоследнему элементу списка, тк последний элемент - кнопка, которая спрятана
-  &:nth-last-of-type(2) {
-    @media screen and (max-width: $desktop-width - 1) {
-      margin-right: 0;
-    }
-  }
+  // &:first-of-type {
+  //   @media screen and (min-width: 1600px) {
+  //     margin-right: 88px;
+  //   }
+  // }
 }
 
 .contact-list__link {

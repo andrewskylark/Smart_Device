@@ -34,3 +34,13 @@ a {
 .input-invalid {
   outline: rgba(255, 0, 0, 0.6) solid 2px;
 }
+//firefox fix
+input:required {
+  box-shadow: none;
+}
+//fixes border rounding on IOS
+input,
+textarea {
+  -webkit-appearance: none;
+  border-radius: 0;
+}

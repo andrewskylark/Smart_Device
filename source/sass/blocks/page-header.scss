@@ -3,8 +3,7 @@
   flex-direction: column;
   justify-content: space-between;
   position: relative;
-  margin: 0 auto;
-  min-width: 315px;
+  min-width: 320px;
   min-height: 878px;
   max-width: $max-width;
   padding: 32px 256px 125px 249px;
@@ -46,7 +45,6 @@
 
 .page-header__top {
   display: flex;
-  justify-content: space-between;
   width: 100%;
   margin-bottom: auto;
 }
@@ -55,9 +53,11 @@
   width: 202px;
   height: 52px;
   margin-left: 5px;
+  margin-right: 15px;
 
   img {
     width: 202px;
+    max-width: 202px;
     height: 52px;
   }
 
@@ -67,8 +67,17 @@
 
     img {
       width: 38px;
+      max-width: 38px;
       height: 38px;
     }
+  }
+}
+
+.page-header__btn.btn {
+  align-self: flex-start;
+
+  @media screen and (max-width: $desktop-width - 1) {
+    display: none;
   }
 }
 

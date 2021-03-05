@@ -1,7 +1,6 @@
 'use strict';
 const TEXT_LIMIT = 225;
 const DESKTOP_WIDTH = 1024;
-// const PHONE_PATTERN = /^\+7\([0-9]{3}\){0,11}$/;
 const NUMS_BRACKETS_ONLY = /^\+[7]\([0-9]{3}\)[0-9]{0,8}\d*$/;
 const PHONE_NUMS_ONLY = /\d/g;
 const KEYDOWN_NUMS_ONLY = /\d/;
@@ -9,38 +8,52 @@ const PHONE_LENGTH = 11;
 const ESC_KEY = `Escape`;
 const BACKSPACE_KEY = `Backspace`;
 const TAB_KEY = `Tab`;
+const ENTER_KEY = `Enter`;
 
 (() => {
-  //  аккордеон в подвале
-  const accBtns = document.querySelectorAll(`.accordion`);
+  const noJsElems = document.querySelectorAll(`.no-js`);
 
-  for (let btn of accBtns) {
-    btn.addEventListener(`click`, () => {
-
-      btn.classList.toggle(`accordion--active`);
-
-      let panel = btn.nextElementSibling;
-      if (panel.style.maxHeight) {
-        panel.style.maxHeight = null;
-      } else {
-        panel.style.maxHeight = `${panel.scrollHeight}px`;
-      }
+  if (noJsElems) {
+    noJsElems.forEach((elem) => {
+      elem.classList.remove(`no-js`);
     });
   }
 })();
 
 (() => {
-  //  кнопка показа текста О компании
+  const accBtns = document.querySelectorAll(`.accordion-btn`);
+
+  if (accBtns) {
+    for (let btn of accBtns) {
+
+      btn.addEventListener(`click`, () => {
+        let panel = btn.nextElementSibling;
+
+        if (panel.classList.contains(`accordion-content--active`)) {
+          panel.classList.remove(`accordion-content--active`);
+        } else {
+          let active = document.querySelector(`.accordion-content--active`);
+          if (active) {
+            active.classList.remove(`accordion-content--active`);
+          }
+          panel.classList.add(`accordion-content--active`);
+        }
+      });
+    }
+  }
+})();
+
+(() => {
   const btn = document.querySelector(`.btn--about`);
   const p = document.querySelector(`#about p:last-of-type`);
   const initialText = p.textContent;
 
   const trimText = (thisText) => {
-    thisText = thisText.slice(0, TEXT_LIMIT); // отрезать по лимиту
+    thisText = thisText.slice(0, TEXT_LIMIT);
 
     let lastSpace = thisText.lastIndexOf(` `);
 
-    if (lastSpace > 0) { // обрезать до пробела последнего слова
+    if (lastSpace > 0) {
       thisText = thisText.slice(0, lastSpace) + `..`;
     }
     p.textContent = thisText;
@@ -57,17 +70,12 @@ const TAB_KEY = `Tab`;
         trimText(currentText);
       }
     }
-    // let panel = btn.previousElementSibling;
-
-    // if (panel.style.height) {
-    //   panel.style.height = null;
-    // } else {
-    //   panel.style.height = `${panel.scrollHeight}px`;
-    // }
   };
 
-  btn.addEventListener(`click`, adjustText);
-  //  на планшете и мобиле меню текст по умолчанию обрезан
+  if (btn) {
+    btn.addEventListener(`click`, adjustText);
+  }
+
   if (document.body.clientWidth < DESKTOP_WIDTH) {
     adjustText();
   }
@@ -82,10 +90,9 @@ const TAB_KEY = `Tab`;
 })();
 
 (() => {
-  // модальное и его валидация
   const modal = document.querySelector(`.modal`);
   const modalClose = modal.querySelector(`.modal__close`);
-  const modalOpen = document.querySelector(`.page-header button`);
+  const modalOpen = document.querySelector(`.page-header__btn`);
   const form = modal.querySelector(`form`);
   const submitBtn = form.querySelector(`.form__btn--submit`);
   const inputs = form.querySelectorAll(`input`);
@@ -129,7 +136,8 @@ const TAB_KEY = `Tab`;
     let storedTel = localStorage.getItem(`tel--modal`);
     let storedText = localStorage.getItem(`ask--modal`);
 
-    modalOpen.addEventListener(`click`, () => {
+    modalOpen.addEventListener(`click`, (event) => {
+      event.preventDefault();
 
       openModal();
 
@@ -192,6 +200,10 @@ const TAB_KEY = `Tab`;
             textarea.focus();
             tel.setCustomValidity(``);
           }
+          if (evt.key === ENTER_KEY) {
+            form.submit();
+            tel.setCustomValidity(``);
+          }
           tel.reportValidity();
         });
       }
@@ -230,7 +242,6 @@ const TAB_KEY = `Tab`;
 })();
 
 (() => {
-  // форма и ее валидация
   const form = document.querySelector(`.page-main__form form`);
   const submitBtn = form.querySelector(`.form__btn`);
   const inputs = form.querySelectorAll(`input`);
@@ -290,6 +301,10 @@ const TAB_KEY = `Tab`;
       }
       if (evt.key === TAB_KEY) {
         textarea.focus();
+        tel.setCustomValidity(``);
+      }
+      if (evt.key === ENTER_KEY) {
+        form.submit();
         tel.setCustomValidity(``);
       }
       tel.reportValidity();

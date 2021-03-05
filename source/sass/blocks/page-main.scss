@@ -1,17 +1,17 @@
 .page-main {
   min-width: 320px;
   padding: 109px 0 0;
-  background-image: url("../img/bg-|>.svg"),
-    url("../img/bg-<|.svg"),
-    url("../img/bg-<|.svg"),
-    url("../img/bg-|>.svg");
+  background-image: url("../img/bg-triangle-right.svg"),
+    url("../img/bg-triangle-left.svg"),
+    url("../img/bg-triangle-left.svg"),
+    url("../img/bg-triangle-right.svg");
   background-repeat: no-repeat;
   background-size: 17.5%, 17%, 38%, 17.5%;
   background-position: 98% 15.5%, 13% 2%, -16% 27.5%, 46% 21%;
 
   @media screen and (max-width: $desktop-width - 1) {
     padding-top: 54px;
-    background-image: url("../img/bg-|>.svg");
+    background-image: url("../img/bg-triangle-right.svg");
     background-repeat: no-repeat;
     background-size: 95%;
     background-position: 629% 4.5%;
@@ -91,10 +91,7 @@
     line-height: 22px;
 
     @media screen and (max-width: $desktop-width - 1) {
-      // height: 201px;
       margin-bottom: 20px;
-      // overflow-y: hidden;
-      // transition: height 0.3s ease-out;
     }
 
     @media screen and (max-width: $tablet-width - 1) {
@@ -113,7 +110,7 @@
 
 .page-main__goods {
   min-height: 936px;
-  padding: 88px 0;
+  padding: 88px 0 58px;
   background: $bg;
 
   @media screen and (max-width: $desktop-width - 1) {
