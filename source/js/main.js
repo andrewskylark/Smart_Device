@@ -75,18 +75,20 @@ const ENTER_KEY = `Enter`;
   if (btn) {
     btn.addEventListener(`click`, adjustText);
   }
+  if (p) {
 
-  if (document.body.clientWidth < DESKTOP_WIDTH) {
-    adjustText();
-  }
-
-  window.addEventListener(`resize`, () => {
     if (document.body.clientWidth < DESKTOP_WIDTH) {
-      trimText(initialText);
-    } else {
-      p.textContent = initialText;
+      adjustText();
     }
-  });
+
+    window.addEventListener(`resize`, () => {
+      if (document.body.clientWidth < DESKTOP_WIDTH) {
+        trimText(initialText);
+      } else {
+        p.textContent = initialText;
+      }
+    });
+  }
 })();
 
 (() => {
