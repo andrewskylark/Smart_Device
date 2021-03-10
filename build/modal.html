@@ -48,7 +48,7 @@
           </li>
         </ul>
 
-        <a class="page-header__btn btn" href="../modal.html">Заказать звонок</a>
+        <a class="page-header__btn btn" href="#!">Заказать звонок</a>
       </div>
 
 
@@ -81,87 +81,41 @@
 
     <main class="page-main">
 
-      <section class="page-main__features features wrapper" id="features">
-        <h2 class="visually-hidden">наши преимущества</h2>
-        <ul class="features__list">
-          <li class="features__item features__item--deadline">
-            <svg class="features__icon" width="35" height="35">
-              <use xlink:href="img/sprite_auto.svg#icon-stopwatch"></use>
-            </svg>
-            <h3>Оперативные сроки</h3>
-            <p>Усовершенствованная логистическая система позволяет нам просчитывать стоимость, производить и доставлять
-              заказы плат и комплектующих в самые короткие сроки
-            </p>
-          </li>
-          <li class="features__item features__item--suppliers">
-            <svg width="35" height="35">
-              <use xlink:href="img/sprite_auto.svg#icon-hired"></use>
-            </svg>
-            <h3>Крупные поставщики</h3>
-            <p>Нашими поставщиками являются такие крупные мировые компании как: OSRAM, CREE, HOLGLITRONIC, REFOND.
-              Сотрудничество с такими компаниями обеспичивает хорошее качество нашей продукции.
-            </p>
-          </li>
-          <li class="features__item features__item--info">
-            <svg width="35" height="35">
-              <use xlink:href="img/sprite_auto.svg#icon-detective"></use>
-            </svg>
-            <h3>Полная конфиденциальность</h3>
-            <p>По желанию клиента мы обеспечиваем полную конфеденциальность.
-            </p>
-          </li>
-          <li class="features__item features__item--price">
-            <svg width="36" height="36">
-              <use xlink:href="img/sprite_auto.svg#icon-tag"></use>
-            </svg>
-            <h3>Персонализация стоимости</h3>
-            <p>Мы подбираем определенную фабрику, поставщиков, вид доставки, чтобы установить ту цену, которая Вас
-              устраивает.
-            </p>
-          </li>
-        </ul>
+      <section class="modal modal--no-js">
+
+        <form method="post" class="modal__form form">
+          <h2>Закажите звонок</h2>
+          <p>
+            Оставьте контакты, мы проконсультируем вас бесплатно в удобное время
+          </p>
+
+          <div class="form__inputs">
+            <!-- пустые лэйблы добавлены для >90% seo lighthouse -->
+            <label for="name--modal" class="visually-hidden">Имя</label>
+            <input type="text" name="name--modal" id="name--modal" placeholder="Имя" required="">
+
+            <label for="tel--modal" class="visually-hidden">Телефон</label>
+            <input type="tel" name="tel--modal" id="tel--modal" placeholder="Телефон" required="" pattern="^\+7\([0-9]{0,3}\)?[0-9]{0,7}">
+            <label for="ask--modal" class="visually-hidden">Ваш вопрос</label>
+            <textarea name="ask--modal" id="ask--modal" placeholder="Ваш вопрос"></textarea>
+
+            <button class="form__btn form__btn--submit btn btn--form" type="submit">Отправить</button>
+
+            <div class="form__checkbox">
+              <input type="checkbox" name="i_agree--modal" id="i_agree--modal" checked="" required="">
+              <label for="i_agree--modal">Я согласен на обработку персональных данных</label>
+            </div>
+          </div>
+
+          <button class="modal__close" type="button" aria-label="закрыть модальное окно"></button>
+        </form>
       </section>
 
-      <section class="page-main__about wrapper" id="about">
-        <h2>О компании</h2>
-        <p>
-          Мы поставляем электронные комплектующие, производим печатные платы и предоставляем мировые технологии с 1997
-          года. Выполняем срочные заказы и пилотные образцы до 10 дней.
-        </p>
-        <p>
-          Наши поставщики - мировые производители электронных компонентов: OSRAM, CREE, HOLGLITRONIC, REFOND. Печатные
-          платы и комплектующие Service Devices применяются на предприятиях Российских Железных Дорог (РЖД),
-          РоссАвтоПрома (ВАЗ, АвтоГАЗ), МинАтома, СпецМедТехники. Среди наших клиентов крупнейшие Производители
-          светотехники России.
-        </p>
 
-        <button type="button" class="btn btn--about">Подробнее</button>
-      </section>
 
-      <section class="page-main__goods goods" id="goods">
-        <div class="wrapper">
-          <h2>Service Device предлагает следующие товары и услуги</h2>
-          <ul class="goods__list">
-            <li><a class="goods__link goods__link--production" aria-label="фотография печатных плат" href="#!">
-                <h3>Производство печатных плат
-                </h3>
-              </a>
-            </li>
-            <li><a class="goods__link goods__link--install" aria-label="фотография монтажа печатных плат" href="#!">
-                <h3>Монтаж печатных плат
-                </h3>
-              </a>
-            </li>
-            <li><a class="goods__link goods__link--light" aria-label="фотография светодиоидов для печатных плат" href="#!">
-                <h3>Комплектующие для светотехники
-                </h3>
-              </a>
-            </li>
-          </ul>
-        </div>
-      </section>
 
-      <section class="page-main__form">
+
+      <!-- <section class="page-main__form">
         <div class="wrapper wrapper--form">
           <form method="post" class="form" id="form">
             <h2>Остались вопросы? Задайте их нам!</h2>
@@ -170,26 +124,27 @@
             </p>
 
             <div class="form__inputs">
-              <!-- пустые лэйблы добавлены для >90% seo lighthouse -->
+
               <label for="name" class="visually-hidden">Имя</label>
-              <input type="text" name="name" id="name" placeholder="Имя" required="">
+              <input type="text" name="name" id="name" placeholder="Имя" required>
 
               <label for="tel" class="visually-hidden">Телефон</label>
-              <input type="tel" name="tel" id="tel" placeholder="Телефон" required="" pattern="^\+7\([0-9]{0,3}\)?[0-9]{0,7}">
+              <input type="tel" name="tel" id="tel" placeholder="Телефон" required
+                pattern="^\+7\([0-9]{0,3}\)?[0-9]{0,7}">
               <label for="ask" class="visually-hidden">Ваш вопрос</label>
               <textarea name="ask" id="ask" placeholder="Ваш вопрос"></textarea>
 
               <button class="form__btn btn btn--form" type="submit">Задать вопрос</button>
 
               <div class="form__checkbox">
-                <input type="checkbox" name="i_agree" id="i_agree" checked="" required="">
+                <input type="checkbox" name="i_agree" id="i_agree" checked required>
                 <label for="i_agree">Я согласен на обработку персональных данных</label>
               </div>
             </div>
           </form>
 
         </div>
-      </section>
+      </section> -->
 
     </main>
 
@@ -338,36 +293,6 @@
     </footer>
 
   </div>
-
-  <section class="modal">
-
-    <form method="post" class="modal__form form">
-      <h2>Закажите звонок</h2>
-      <p>
-        Оставьте контакты, мы проконсультируем вас бесплатно в удобное время
-      </p>
-
-      <div class="form__inputs">
-        <!-- пустые лэйблы добавлены для >90% seo lighthouse -->
-        <label for="name--modal" class="visually-hidden">Имя</label>
-        <input type="text" name="name--modal" id="name--modal" placeholder="Имя" required="">
-
-        <label for="tel--modal" class="visually-hidden">Телефон</label>
-        <input type="tel" name="tel--modal" id="tel--modal" placeholder="Телефон" required="" pattern="^\+7\([0-9]{0,3}\)?[0-9]{0,7}">
-        <label for="ask--modal" class="visually-hidden">Ваш вопрос</label>
-        <textarea name="ask--modal" id="ask--modal" placeholder="Ваш вопрос"></textarea>
-
-        <button class="form__btn form__btn--submit btn btn--form" type="submit">Отправить</button>
-
-        <div class="form__checkbox">
-          <input type="checkbox" name="i_agree--modal" id="i_agree--modal" checked="" required="">
-          <label for="i_agree--modal">Я согласен на обработку персональных данных</label>
-        </div>
-      </div>
-
-      <button class="modal__close" type="button" aria-label="закрыть модальное окно"></button>
-    </form>
-  </section>
   <script src="js/main.js"></script>
 </body>
 

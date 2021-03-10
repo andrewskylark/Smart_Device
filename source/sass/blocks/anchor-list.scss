@@ -46,17 +46,11 @@
 }
 
 .anchor-list__link {
-  // &--btn {
-  //   margin: 94px 0 0 94px;
-
-  //   @media screen and (max-width: $desktop-width - 1) {
-  //     margin: 48px 0 0 94px;
-  //   }
-
-  //   @media screen and (max-width: $tablet-width - 1) {
-  //     margin: 0 0 0 70px;
-  //   }
-  // }
+  &--btn {
+    @media screen and (max-width: $tablet-width - 1) {
+      margin: 0 auto;
+    }
+  }
 
   &--scroll {
     font-size: 14px;

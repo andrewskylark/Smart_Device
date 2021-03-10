@@ -138,8 +138,8 @@ const ENTER_KEY = `Enter`;
     let storedTel = localStorage.getItem(`tel--modal`);
     let storedText = localStorage.getItem(`ask--modal`);
 
-    modalOpen.addEventListener(`click`, (event) => {
-      event.preventDefault();
+    modalOpen.addEventListener(`click`, () => {
+      // event.preventDefault();
 
       openModal();
 
