@@ -46,36 +46,38 @@ const ENTER_KEY = `Enter`;
 (() => {
   const btn = document.querySelector(`.btn--about`);
   const p = document.querySelector(`#about p:last-of-type`);
-  const initialText = p.textContent;
 
-  const trimText = (thisText) => {
-    thisText = thisText.slice(0, TEXT_LIMIT);
-
-    let lastSpace = thisText.lastIndexOf(` `);
-
-    if (lastSpace > 0) {
-      thisText = thisText.slice(0, lastSpace) + `..`;
-    }
-    p.textContent = thisText;
-  };
-
-  const adjustText = () => {
-    if (document.body.clientWidth < DESKTOP_WIDTH) {
-
-      let currentText = p.textContent;
-
-      if (currentText.length !== initialText.length) {
-        p.textContent = initialText;
-      } else if (currentText.length >= TEXT_LIMIT) {
-        trimText(currentText);
-      }
-    }
-  };
-
-  if (btn) {
-    btn.addEventListener(`click`, adjustText);
-  }
   if (p) {
+
+    const initialText = p.textContent;
+
+    const trimText = (thisText) => {
+      thisText = thisText.slice(0, TEXT_LIMIT);
+
+      let lastSpace = thisText.lastIndexOf(` `);
+
+      if (lastSpace > 0) {
+        thisText = thisText.slice(0, lastSpace) + `..`;
+      }
+      p.textContent = thisText;
+    };
+
+    const adjustText = () => {
+      if (document.body.clientWidth < DESKTOP_WIDTH) {
+
+        let currentText = p.textContent;
+
+        if (currentText.length !== initialText.length) {
+          p.textContent = initialText;
+        } else if (currentText.length >= TEXT_LIMIT) {
+          trimText(currentText);
+        }
+      }
+    };
+
+    if (btn) {
+      btn.addEventListener(`click`, adjustText);
+    }
 
     if (document.body.clientWidth < DESKTOP_WIDTH) {
       adjustText();
@@ -245,13 +247,14 @@ const ENTER_KEY = `Enter`;
 
 (() => {
   const form = document.querySelector(`.page-main__form form`);
-  const submitBtn = form.querySelector(`.form__btn`);
-  const inputs = form.querySelectorAll(`input`);
-  const tel = form.querySelector(`#tel`);
-  const name = form.querySelector(`#name`);
-  const textarea = form.querySelector(`textarea`);
 
   if (form) {
+    const submitBtn = form.querySelector(`.form__btn`);
+    const inputs = form.querySelectorAll(`input`);
+    const tel = form.querySelector(`#tel`);
+    const name = form.querySelector(`#name`);
+    const textarea = form.querySelector(`textarea`);
+
     let storedName = localStorage.getItem(`name`);
     let storedTel = localStorage.getItem(`tel`);
     let storedText = localStorage.getItem(`ask`);
@@ -259,89 +262,89 @@ const ENTER_KEY = `Enter`;
     name.value = storedName;
     tel.value = storedTel;
     textarea.value = storedText;
-  }
 
-  if (tel) {
-    tel.addEventListener(`focus`, () => {
+    if (tel) {
+      tel.addEventListener(`focus`, () => {
 
-      if (!NUMS_BRACKETS_ONLY.test(tel.value)) {
-        tel.value = `+7(`;
-      }
-    });
-
-    tel.addEventListener(`keydown`, (evt) => {
-      let old = 0;
-      if (!KEYDOWN_NUMS_ONLY.test(evt.key)) {
-        evt.preventDefault();
-        tel.setCustomValidity(`Только цифры!`);
-      } else {
-        tel.setCustomValidity(``);
-
-        let curLen = tel.value.length;
-
-        if (curLen < old) {
-          old--;
-          return;
+        if (!NUMS_BRACKETS_ONLY.test(tel.value)) {
+          tel.value = `+7(`;
         }
+      });
 
-        if (curLen === 2) {
-          tel.value = tel.value + `(`;
-        }
-        if (curLen === 6) {
-          tel.value = tel.value + `)`;
-        }
-        if (curLen > 13) {
-          tel.value = tel.value.substring(0, tel.value.length - 1);
-        }
-
-        old++;
-      }
-
-      if ((evt.key === BACKSPACE_KEY) && (tel.value !== `+7(`)) {
-        tel.value = tel.value.substring(0, tel.value.length - 1);
-        tel.setCustomValidity(``);
-      }
-      if (evt.key === TAB_KEY) {
-        textarea.focus();
-        tel.setCustomValidity(``);
-      }
-      if (evt.key === ENTER_KEY) {
-        form.submit();
-        tel.setCustomValidity(``);
-      }
-      tel.reportValidity();
-    });
-  }
-
-  if (submitBtn) {
-
-    submitBtn.addEventListener(`click`, () => {
-
-      for (let input of inputs) {
-        if (input.reportValidity() === false) {
-          input.classList.add(`input-invalid`);
+      tel.addEventListener(`keydown`, (evt) => {
+        let old = 0;
+        if (!KEYDOWN_NUMS_ONLY.test(evt.key)) {
+          evt.preventDefault();
+          tel.setCustomValidity(`Только цифры!`);
         } else {
-          input.classList.remove(`input-invalid`);
+          tel.setCustomValidity(``);
+
+          let curLen = tel.value.length;
+
+          if (curLen < old) {
+            old--;
+            return;
+          }
+
+          if (curLen === 2) {
+            tel.value = tel.value + `(`;
+          }
+          if (curLen === 6) {
+            tel.value = tel.value + `)`;
+          }
+          if (curLen > 13) {
+            tel.value = tel.value.substring(0, tel.value.length - 1);
+          }
+
+          old++;
         }
-      }
 
-      if (tel.value.length === 0) {
-        tel.setCustomValidity(`Вы не ввели номер телефона!`);
-        tel.classList.add(`input-invalid`);
-      } else if (tel.value.match(PHONE_NUMS_ONLY).length < PHONE_LENGTH) {
-        tel.setCustomValidity(`Номер должен быть длиной ${PHONE_LENGTH} цифр, еще ${PHONE_LENGTH - tel.value.match(PHONE_NUMS_ONLY).length}`);
-        tel.classList.add(`input-invalid`);
-      } else if (tel.value.match(PHONE_NUMS_ONLY).length > PHONE_LENGTH) {
-        tel.setCustomValidity(`Номер должен быть длиной ${PHONE_LENGTH} цифр, введено: ${tel.value.match(PHONE_NUMS_ONLY).length}`);
-        tel.classList.add(`input-invalid`);
-      } else {
-        tel.setCustomValidity(``);
-        tel.classList.remove(`input-invalid`);
-      }
+        if ((evt.key === BACKSPACE_KEY) && (tel.value !== `+7(`)) {
+          tel.value = tel.value.substring(0, tel.value.length - 1);
+          tel.setCustomValidity(``);
+        }
+        if (evt.key === TAB_KEY) {
+          textarea.focus();
+          tel.setCustomValidity(``);
+        }
+        if (evt.key === ENTER_KEY) {
+          form.submit();
+          tel.setCustomValidity(``);
+        }
+        tel.reportValidity();
+      });
+    }
 
-      localStorage.setItem(`name`, name.value);
-      localStorage.setItem(`tel`, tel.value);
-      localStorage.setItem(`ask`, textarea.value);
-    });
+    if (submitBtn) {
+
+      submitBtn.addEventListener(`click`, () => {
+
+        for (let input of inputs) {
+          if (input.reportValidity() === false) {
+            input.classList.add(`input-invalid`);
+          } else {
+            input.classList.remove(`input-invalid`);
+          }
+        }
+
+        if (tel.value.length === 0) {
+          tel.setCustomValidity(`Вы не ввели номер телефона!`);
+          tel.classList.add(`input-invalid`);
+        } else if (tel.value.match(PHONE_NUMS_ONLY).length < PHONE_LENGTH) {
+          tel.setCustomValidity(`Номер должен быть длиной ${PHONE_LENGTH} цифр, еще ${PHONE_LENGTH - tel.value.match(PHONE_NUMS_ONLY).length}`);
+          tel.classList.add(`input-invalid`);
+        } else if (tel.value.match(PHONE_NUMS_ONLY).length > PHONE_LENGTH) {
+          tel.setCustomValidity(`Номер должен быть длиной ${PHONE_LENGTH} цифр, введено: ${tel.value.match(PHONE_NUMS_ONLY).length}`);
+          tel.classList.add(`input-invalid`);
+        } else {
+          tel.setCustomValidity(``);
+          tel.classList.remove(`input-invalid`);
+        }
+
+        localStorage.setItem(`name`, name.value);
+        localStorage.setItem(`tel`, tel.value);
+        localStorage.setItem(`ask`, textarea.value);
+      });
+    }
   }
 })();
