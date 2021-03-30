@@ -55,17 +55,17 @@
   &--scroll {
     font-size: 14px;
     line-height: 16px;
-    color: $text-main;
-    opacity: 0.5;
+    color: $text-light;
+    opacity: 0.9;
 
     &:hover,
     &:focus {
-      opacity: 1;
+      color: $text-main;
     }
 
     &:active {
       color: $text-accent;
-      opacity: 1;
+      opacity: 0.6;
     }
   }
 }
