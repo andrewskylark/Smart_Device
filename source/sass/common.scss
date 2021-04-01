@@ -41,6 +41,5 @@ input:required {
 //fixes border rounding on IOS
 input,
 textarea {
-  -webkit-appearance: none;
   border-radius: 0;
 }

@@ -126,6 +126,7 @@
             input.classList.add(`input-invalid`);
           } else {
             input.classList.remove(`input-invalid`);
+
           }
         }
 

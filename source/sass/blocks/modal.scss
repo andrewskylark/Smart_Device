@@ -25,11 +25,12 @@
   position: relative;
   width: 490px;
   min-height: 605px;
-  margin-top: 136px;
+  margin-top: 3%;
   margin-left: auto;
   margin-right: auto;
   padding: 30px 39px;
   background: $main;
+  animation: bounce 0.4s;
 
   @media screen and (max-width: 550px) {
     width: 300px;
@@ -136,5 +137,15 @@
 
   &::after {
     transform: translateX(-50%) translateY(-50%) rotate(-45deg);
+  }
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateY(-1500px);
+  }
+
+  100% {
+    transform: translateY(0);
   }
 }

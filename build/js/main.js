@@ -400,6 +400,7 @@
             input.classList.add(`input-invalid`);
           } else {
             input.classList.remove(`input-invalid`);
+
           }
         }
 
@@ -442,6 +443,43 @@
   if (noJsElems) {
     noJsElems.forEach((elem) => {
       elem.classList.remove(`no-js`);
+    });
+  }
+})();
+
+
+/***/ }),
+
+/***/ "./source/js/scroll.js":
+/*!*****************************!*\
+  !*** ./source/js/scroll.js ***!
+  \*****************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+(() => {
+  const links = document.querySelectorAll(`a[data-goto]`);
+
+  if (links) {
+    const onLinkClick = (evt) => {
+      evt.preventDefault();
+      const link = evt.target;
+
+      if (link.dataset.goto && document.querySelector(link.dataset.goto)) {
+        const gotoBlock = document.querySelector(link.dataset.goto);
+        const gotoBlockValue = gotoBlock.getBoundingClientRect().top + pageYOffset;
+
+        window.scrollTo({
+          top: gotoBlockValue,
+          behavior: `smooth`
+        });
+      }
+    };
+
+    links.forEach((link) => {
+      link.addEventListener(`click`, onLinkClick);
     });
   }
 })();
@@ -512,15 +550,16 @@
 /***/ }),
 
 /***/ 0:
-/*!***************************************************************************************************************************************************!*\
-  !*** multi ./source/js/no-js.js ./source/js/consts.js ./source/js/modal.js ./source/js/trim_text.js ./source/js/form.js ./source/js/accordion.js ***!
-  \***************************************************************************************************************************************************/
+/*!*************************************************************************************************************************************************************************!*\
+  !*** multi ./source/js/no-js.js ./source/js/consts.js ./source/js/modal.js ./source/js/scroll.js ./source/js/trim_text.js ./source/js/form.js ./source/js/accordion.js ***!
+  \*************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(/*! ./source/js/no-js.js */"./source/js/no-js.js");
 __webpack_require__(/*! ./source/js/consts.js */"./source/js/consts.js");
 __webpack_require__(/*! ./source/js/modal.js */"./source/js/modal.js");
+__webpack_require__(/*! ./source/js/scroll.js */"./source/js/scroll.js");
 __webpack_require__(/*! ./source/js/trim_text.js */"./source/js/trim_text.js");
 __webpack_require__(/*! ./source/js/form.js */"./source/js/form.js");
 module.exports = __webpack_require__(/*! ./source/js/accordion.js */"./source/js/accordion.js");

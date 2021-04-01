@@ -12,8 +12,10 @@
   <link rel="preload" href="fonts/roboto-condensed-v19-latin_cyrillic-regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
   <link rel="preload" href="fonts/roboto-condensed-v19-latin_cyrillic-700.woff2" as="font" type="font/woff2" crossorigin="anonymous">
   <link rel="stylesheet" href="css/style.min.css">
-  <!-- чтобы не показывало ошибку фавиконки -->
-  <link rel="shortcut icon" href="#">
+  <!-- favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?ver=2">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png?ver=2">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png?ver=2">
 </head>
 
 <body>
@@ -46,11 +48,17 @@
               <span>+7 (495) 000 52 52</span>
             </a>
           </li>
+          <li class="contact-list__item">
+            <a class="contact-list__link contact-list__link--flag" aria-label="ссылка на русский язык" href="ru/index.html">
+              <svg width="24" height="18">
+                <use xlink:href="img/sprite_auto.svg#icon-ru"></use>
+              </svg>
+            </a>
+          </li>
         </ul>
 
         <a class="page-header__btn btn" href="modal.html">Заказать звонок</a>
       </div>
-
 
       <div class="page-header__title">
 
@@ -59,13 +67,13 @@
 
         <ul class="anchor-list">
           <li class="anchor-list__item anchor-list__item--btn">
-            <a class="anchor-list__link anchor-list__link--btn btn btn--anchor" href="#form">
+            <a data-goto=".page-main__form" class="anchor-list__link anchor-list__link--btn btn btn--anchor" href="#form">
               <span>Получить бесплатную консультацию</span>
               <span>Бесплатная консультация</span>
             </a>
           </li>
           <li class="anchor-list__item anchor-list__item--scroll">
-            <a class="anchor-list__link anchor-list__link--scroll" href="#features">
+            <a data-goto=".page-main__features" class="anchor-list__link anchor-list__link--scroll" href="#features">
               Скролл вниз
             </a>
           </li>
@@ -245,22 +253,22 @@
           <div class="accordion-content accordion-content--nav no-js">
             <ul class="site-list">
               <li class="site-list__item">
-                <a class="site-list__link" href="#about">
+                <a data-goto=".page-main__about" class="site-list__link" href="#about">
                   О компании
                 </a>
               </li>
               <li class="site-list__item">
-                <a class="site-list__link" href="#goods">
+                <a data-goto=".page-main__goods" class="site-list__link" href="#goods">
                   Продукты
                 </a>
               </li>
               <li class="site-list__item">
-                <a class="site-list__link" href="#goods">
+                <a data-goto=".page-main__goods" class="site-list__link" href="#goods">
                   Производство печатных плат
                 </a>
               </li>
               <li class="site-list__item">
-                <a class="site-list__link" href="#goods">
+                <a data-goto=".page-main__goods" class="site-list__link" href="#goods">
                   Монтаж печатных плат
                 </a>
               </li>
@@ -278,7 +286,7 @@
                 </a>
               </li>
               <li class="site-list__item">
-                <a class="site-list__link" href="#contacts">
+                <a data-goto=".page-header__top" class="site-list__link" href="#contacts">
                   Контакты
                 </a>
               </li>
@@ -324,14 +332,14 @@
             1999-2018 SD Service Devices
           </span>
         </p>
-        <p>
-          <a href="#!">
-            Условия конфиденциальности
+        <p> Макет:
+          <a href="https://htmlacademy.ru/study">
+            HTML Academy
           </a>
         </p>
-        <p>
-          <a href="#!">
-            Developed by wow studio
+        <p> Developed by:
+          <a href="https://andrewskylark.dev">
+             andrewskylark
           </a>
         </p>
       </section>
