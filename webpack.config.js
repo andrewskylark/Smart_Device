@@ -11,11 +11,12 @@ module.exports = {
     `./source/js/scroll.js`,
     `./source/js/trim_text.js`,
     `./source/js/form.js`,
+    `./source/js/scroll_up_btn.js`,
     `./source/js/accordion.js`
   ],
   output: {
     filename: `main.js`,
-    path: path.resolve(__dirname, `./build/js`)
+    path: path.resolve(__dirname, `./build/js`),
     // iife: true
   },
   devtool: false
