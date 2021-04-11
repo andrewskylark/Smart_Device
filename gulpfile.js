@@ -38,13 +38,6 @@ gulp.task(`js`, function () {
       .pipe(server.stream());
 });
 
-// gulp.task(`webpack`, function () {
-//   return gulp.src(`source/js/*.js`)
-//       .pipe(webpack())
-//       .pipe(gulp.dest(`build/js`))
-//       .pipe(server.stream());
-// });
-
 gulp.task(`webpack`, (done) => {
   gulp.src(`source/js/*.js`)
       .pipe(webpackStream(webpackConfig), webpack)

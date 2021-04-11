@@ -7,6 +7,7 @@
     PHONE_NUMS_ONLY: /\d/g,
     KEYDOWN_NUMS_ONLY: /\d/,
     PHONE_LENGTH: 11,
+    TEL_PREFIX: `+7(`,
     ESC_KEY: `Escape`,
     BACKSPACE_KEY: `Backspace`,
     TAB_KEY: `Tab`,
