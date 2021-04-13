@@ -36,10 +36,12 @@ a {
 }
 //firefox fix
 input:required {
-  box-shadow: none;
+  box-shadow: none
 }
 //fixes border rounding on IOS
 input,
-textarea {
+textarea,
+button {
+  appearance: none;
   border-radius: 0;
 }
