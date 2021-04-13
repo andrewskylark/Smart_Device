@@ -30,18 +30,22 @@ img {
 a {
   text-decoration: none;
 }
-
-.input-invalid {
-  outline: rgba(255, 0, 0, 0.6) solid 2px;
-}
-//firefox fix
+// firefox fix: removes red border on inputs:required
 input:required {
   box-shadow: none
 }
-//fixes border rounding on IOS
+// fixes border rounding on IOS
 input,
 textarea,
 button {
   appearance: none;
   border-radius: 0;
+}
+// resets 1em padding left & right on IOS
+button {
+  padding: initial;
+}
+
+.input-invalid {
+  outline: rgba(255, 0, 0, 0.6) solid 2px;
 }
